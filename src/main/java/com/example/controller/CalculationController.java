@@ -17,7 +17,6 @@ public class CalculationController {
     
     @GetMapping("/run")
     public void postMethodName() {
-        // calculationService.number = number;
         
         Runnable[] threads = {
             calculationService.squareTask,
