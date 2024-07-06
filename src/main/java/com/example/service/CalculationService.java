@@ -4,12 +4,16 @@ import java.util.Scanner;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CalculationService extends CalculationTask {
+public class CalculationService {
 
     public static final Logger logger = LoggerFactory.getLogger(CalculationService.class);
+
+    @Autowired
+    CalculationTask calculationTask;
 
     Scanner sc = new Scanner(System.in);
     int number;
@@ -20,42 +24,42 @@ public class CalculationService extends CalculationTask {
     }
 
     public Runnable squareTask = () -> {
-        int square = super.square(number);
+        int square = calculationTask.square(number);
         logger.info("Square of {} is: {}", number, square);
     };
 
     public Runnable cubeTask = () -> {
-        int cube = super.cube(number);
+        int cube = calculationTask.cube(number);
         logger.info("Cube of {} is: {}", number, cube);
     };
 
     public Runnable evenTask = () -> {
-        boolean even = super.isEven(number);
+        boolean even = calculationTask.isEven(number);
         logger.info(" {} is even: {}", number, even);
     };
 
     public Runnable primeTask = () -> {
-        boolean isPrime = super.isPrimeOrNot(number);
+        boolean isPrime = calculationTask.isPrimeOrNot(number);
         logger.info("{} is prime: {}", number, isPrime);
     };
 
     public Runnable armstrongTask = () -> {
-        boolean armstrong = super.isArmstrong(number);
+        boolean armstrong = calculationTask.isArmstrong(number);
         logger.info("{} is Armstrong: {}", number, armstrong);
     };
 
     public Runnable palindromeTask = () -> {
-        boolean isPalindrome = super.isPalindrome(number);
+        boolean isPalindrome = calculationTask.isPalindrome(number);
         logger.info("{} is palindrome: {}", number, isPalindrome);
     };
 
     public Runnable factorialTask = () -> {
-        int factorialNum = super.factorial(number);
+        int factorialNum = calculationTask.factorial(number);
         logger.info("Factorial of {} is: {}", number, factorialNum);
     };
 
     public Runnable reverseTask = () -> {
-        int reversedNum = super.reverse(number);
+        int reversedNum = calculationTask.reverse(number);
         logger.info("Reverse of {} is: {}", number, reversedNum);
     };
 }
