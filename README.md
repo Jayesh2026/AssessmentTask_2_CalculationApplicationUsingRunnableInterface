@@ -20,8 +20,10 @@ This Spring Boot application demonstrates running multiple calculation tasks con
 #### Running the Application
 
 To run the application:
-1. Clone the repository. 
-- git clone (`https://github.com/Jayesh2026/AssessmentTask_2_CalculationApplicationUsingRunnableInterface.git`)
+1. Clone the repository.
+```bash
+git clone (`https://github.com/Jayesh2026/AssessmentTask_2_CalculationApplicationUsingRunnableInterface.git`)
+```
 2. Navigate to the project directory.
 3. Execute `./gradlew bootRun` (on Unix-based systems) or `gradlew bootRun` (on Windows) to start the Spring Boot application.
 
